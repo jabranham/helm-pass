@@ -40,7 +40,7 @@
 (require 'helm)
 (require 'password-store)
 
-(defgroup 'helm-pass
+(defgroup helm-pass nil
   "Emacs helm interface for helm-pass"
   :group 'helm)
 
