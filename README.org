@@ -27,3 +27,4 @@ manager.
 
 * Todo list
 ** TODO copy username
+** TODO git pull/push
