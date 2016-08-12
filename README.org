@@ -24,3 +24,6 @@ manager.
   =pass= knows about and allow you to perform various commands on them.
   The default (i.e. just pressing =RET=) will copy the password to your
   clipboard. 
+
+* Todo list
+** TODO copy username
