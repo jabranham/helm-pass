@@ -1,0 +1,26 @@
+#+TITLE: helm-pass
+#+AUTHOR: J. Alexander Branham
+#+EMAIL: branham@utexas.edu
+#+LANGUAGE: en-us
+
+Helm-pass is a [[https://emacs-helm.github.io/helm/][helm]] interface for [[https://www.passwordstore.org/][pass]], the standard unix password
+manager. 
+
+* Installation
+
+  =helm-pass= is not yet in MELPA. Until it is, you can ~git clone~ it to
+  wherever and then load it like so (assuming you use the excellent
+  [[https://github.com/jwiegley/use-package][use-package]] package):
+
+  #+BEGIN_SRC emacs-lisp
+    (use-package helm-pass
+      :load-path "/path/to/helm-pass"
+      :commands (helm-pass))
+  #+END_SRC
+
+* Usage
+  
+  The main command is ~helm-pass~ which will list all the passwords that
+  =pass= knows about and allow you to perform various commands on them.
+  The default (i.e. just pressing =RET=) will copy the password to your
+  clipboard. 
