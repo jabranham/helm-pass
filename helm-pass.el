@@ -1,4 +1,4 @@
-;;; system-packages.el --- functions to manage system packages
+;;; helm-pass.el --- helm interface of pass, the standard Unix password manager
 
 ;; Copyright (C) 2016 J. Alexander Branham
 
@@ -59,4 +59,4 @@
         :buffer "*helm-pass*"))
 
 (provide 'helm-google)
-;;; helm-google ends here
+;;; helm-pass.el ends here
