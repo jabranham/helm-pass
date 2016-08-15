@@ -55,7 +55,7 @@
 (defun helm-pass ()
   "Helm interface for pass"
   (interactive)
-  (helm :sources #'helm-source-pass
+  (helm :sources 'helm-source-pass
         :buffer "*helm-pass*"))
 
 (provide 'helm-google)
