@@ -8,13 +8,13 @@ manager.
 
 * Installation
 
-  =helm-pass= is not yet in MELPA. Until it is, you can ~git clone~ it to
-  wherever and then load it like so (assuming you use the excellent
-  [[https://github.com/jwiegley/use-package][use-package]] package):
+  =helm-pass= is available on MELPA. Assuming you use the excellent
+  [[https://github.com/jwiegley/use-package][use-package]] package (and have MELPA set up), you may install and use
+  it with the following:
 
   #+BEGIN_SRC emacs-lisp
     (use-package helm-pass
-      :load-path "/path/to/helm-pass"
+      :ensure t
       :commands (helm-pass))
   #+END_SRC
 
