@@ -25,6 +25,3 @@ manager.
   The default (i.e. just pressing =RET=) will copy the password to your
   clipboard. 
 
-* Todo list
-** TODO copy username
-** TODO git pull/push
