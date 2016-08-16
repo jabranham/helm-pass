@@ -58,5 +58,5 @@
   (helm :sources 'helm-source-pass
         :buffer "*helm-pass*"))
 
-(provide 'helm-google)
+(provide 'helm-pass)
 ;;; helm-pass.el ends here
