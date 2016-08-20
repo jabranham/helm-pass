@@ -44,12 +44,18 @@
   "Emacs helm interface for helm-pass"
   :group 'helm)
 
+(defcustom helm-pass-actions
+  '(("Copy password to clipboard" . password-store-copy)
+    ("Edit entry" . password-store-edit)
+    ("Browse url of entry" . password-store-url))
+  "List of actions for helm-pass"
+  :group 'helm-pass
+  :type '(alist :key-type string :value-type function))
+
 (defvar helm-source-pass
   (helm-build-sync-source "pass functions with helm"
     :candidates #'password-store-list
-    :action '(("Copy password to clipboard" . password-store-copy)
-              ("Edit entry" . password-store-edit)
-              ("Browse url of entry" . password-store-url))))
+    :action helm-pass-actions))
 
 ;;;###autoload
 (defun helm-pass ()
