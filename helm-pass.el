@@ -1,12 +1,12 @@
 ;;; helm-pass.el --- helm interface of pass, the standard Unix password manager
 
-;; Copyright (C) 2016 J. Alexander Branham
+;; Copyright (C) 2016, 2017 J. Alexander Branham
 
 ;; Author: J. Alexander Branham <branham@utexas.edu>
 ;; Maintainer: J. Alexander Branham <branham@utexas.edu>
 ;; URL: https://github.com/jabranham/helm-pass
-;; Version: 0.1
-;; Package-Requires: ((helm "0") (password-store "0"))
+;; Version: 0.2
+;; Package-Requires: ((helm "0") (password-store "0") (auth-password-store "0"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -44,13 +44,25 @@
 
 (require 'helm)
 (require 'password-store)
+(require 'auth-password-store)
 
 (defgroup helm-pass nil
   "Emacs helm interface for helm-pass"
   :group 'helm)
 
+(defun helm-pass-get-username (entry)
+  "Get username for ENTRY.
+
+Does not clear it from clipboard."
+  (let ((username (auth-pass-get "user" entry)))
+    (if username
+        (progn (password-store-clear)
+               (kill-new username))
+      (message ("Username not found!")))))
+
 (defcustom helm-pass-actions
   '(("Copy password to clipboard" . password-store-copy)
+    ("Copy username to clipboard" . helm-pass-get-username)
     ("Edit entry" . password-store-edit)
     ("Browse url of entry" . password-store-url))
   "List of actions for helm-pass"
@@ -58,7 +70,7 @@
   :type '(alist :key-type string :value-type function))
 
 (defvar helm-source-pass
-  (helm-build-sync-source "pass functions with helm"
+  (helm-build-sync-source "Password File"
     :candidates #'password-store-list
     :action helm-pass-actions))
 
