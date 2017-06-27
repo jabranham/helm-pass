@@ -1,4 +1,4 @@
-;;; helm-pass.el --- helm interface of pass, the standard Unix password manager
+;;; helm-pass.el --- helm interface of pass, the standard Unix password manager -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2016, 2017 J. Alexander Branham
 
@@ -58,7 +58,7 @@ Does not clear it from clipboard."
     (if username
         (progn (password-store-clear)
                (kill-new username))
-      (message ("Username not found!")))))
+      (message "Username not found!"))))
 
 (defcustom helm-pass-actions
   '(("Copy password to clipboard" . password-store-copy)
