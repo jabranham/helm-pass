@@ -8,22 +8,19 @@ manager.
 
 * Installation
 
-  =helm-pass= is available on MELPA. Assuming you use the excellent
-  [[https://github.com/jwiegley/use-package][use-package]] package (and have MELPA set up), you may install and use
-  it with the following:
+You may clone =helm-pass= from its git repository, or install it from MELPA. To
+load it, assuming you use the excellent [[https://github.com/jwiegley/use-package][use-package]] package, it is as simple as:
 
-  #+BEGIN_SRC emacs-lisp
-    (use-package helm-pass
-      :ensure t
-      :commands (helm-pass))
-  #+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (use-package helm-pass)
+#+END_SRC
 
 * Usage
   
-  The main command is ~helm-pass~ which will list all the passwords that
-  =pass= knows about and allow you to perform various commands on them.
-  The default (i.e. just pressing =RET=) will copy the password to your
-  clipboard. 
+The main command is ~helm-pass~ which will list all the passwords that
+=pass= knows about and allow you to perform various commands on them.
+The default (i.e. just pressing =RET=) will copy the password to your
+clipboard. 
 
 * Pass in Emacs
 Users of helm-pass may also be interested in functionality provided by other Emacs packages dealing with pass:
