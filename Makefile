@@ -1,5 +1,5 @@
 EMACS ?= emacs-snapshot
-EMACS_FLAGS = --quick --directory .
+EMACS_FLAGS =  --load test/emacs-env --directory .
 EMACS_BATCH = $(EMACS) --batch $(EMACS_FLAGS)
 
 EL  := $(wildcard *.el)
