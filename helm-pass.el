@@ -67,7 +67,8 @@ Does not clear it from clipboard."
     ("Browse url of entry" . password-store-url))
   "List of actions for helm-pass"
   :group 'helm-pass
-  :type '(alist :key-type string :value-type function))
+  ;; :type '(alist :key-type string :value-type function)
+  )
 
 (defvar helm-source-pass
   (helm-build-sync-source "Password File"
