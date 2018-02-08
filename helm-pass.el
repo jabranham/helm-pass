@@ -33,7 +33,7 @@
 ;; Users of helm-pass may also be interested in functionality provided by other Emacs packages dealing with pass:
 ;; password-store.el (which helm-pass relies on): https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el
 ;; pass.el (a major mode for pass): https://github.com/NicolasPetton/pass
-;; auth-password-store.el (integration of Emacs' auth-source with pass): https://github.com/DamienCassou/auth-password-store
+;; auth-password-store.el (integration of Emacs' auth-source with pass, included in Emacs 26+): https://github.com/DamienCassou/auth-password-store
 
 ;; Usage:
 
@@ -65,7 +65,7 @@ Does not clear it from clipboard."
     ("Copy username to clipboard" . helm-pass-get-username)
     ("Edit entry" . password-store-edit)
     ("Browse url of entry" . password-store-url))
-  "List of actions for helm-pass"
+  "List of actions for `helm-pass'."
   :group 'helm-pass
   :type '(alist :key-type string :value-type function))
 
@@ -76,7 +76,7 @@ Does not clear it from clipboard."
 
 ;;;###autoload
 (defun helm-pass ()
-  "Helm interface for pass"
+  "Helm interface for pass."
   (interactive)
   (helm :sources 'helm-source-pass
         :buffer "*helm-pass*"))
