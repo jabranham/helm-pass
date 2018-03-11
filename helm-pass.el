@@ -44,7 +44,7 @@
 
 (require 'helm)
 (require 'password-store)
-(require 'auth-password-store)
+(require 'auth-source-pass)
 
 (defgroup helm-pass nil
   "Emacs helm interface for helm-pass"
@@ -54,7 +54,7 @@
   "Get username for ENTRY.
 
 Does not clear it from clipboard."
-  (let ((username (auth-pass-get "user" entry)))
+  (let ((username (auth-source-pass-get "user" entry)))
     (if username
         (progn (password-store-clear)
                (kill-new username))
