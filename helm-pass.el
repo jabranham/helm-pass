@@ -44,10 +44,11 @@
 
 (require 'helm)
 (require 'password-store)
-(require 'auth-source-pass)
+(require 'auth-source-pass nil t)
 
 (declare-function auth-pass-get "auth-password-store")
 (unless (functionp #'auth-source-pass-get)
+  (require 'auth-password-store nil t)
   ;; auth-source-pass got renamed but MELPA update is slow. For now,
   ;; we'll just make an alias if we need it:
   (defalias #'auth-source-pass-get #'auth-pass-get))
