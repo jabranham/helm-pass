@@ -46,6 +46,12 @@
 (require 'password-store)
 (require 'auth-source-pass)
 
+(declare-function auth-pass-get "auth-password-store")
+(unless (functionp #'auth-source-pass-get)
+  ;; auth-source-pass got renamed but MELPA update is slow. For now,
+  ;; we'll just make an alias if we need it:
+  (defalias #'auth-source-pass-get #'auth-pass-get))
+
 (defgroup helm-pass nil
   "Emacs helm interface for helm-pass"
   :group 'helm)
