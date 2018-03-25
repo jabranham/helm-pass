@@ -6,7 +6,7 @@
 ;; Maintainer: J. Alexander Branham <branham@utexas.edu>
 ;; URL: https://github.com/jabranham/helm-pass
 ;; Version: 0.2
-;; Package-Requires: ((helm "0") (password-store "0") (auth-password-store "0"))
+;; Package-Requires: ((helm "0") (password-store "0") (auth-source-pass "4.0.0"))
 
 ;; This file is not part of GNU Emacs.
 
@@ -33,7 +33,7 @@
 ;; Users of helm-pass may also be interested in functionality provided by other Emacs packages dealing with pass:
 ;; password-store.el (which helm-pass relies on): https://git.zx2c4.com/password-store/tree/contrib/emacs/password-store.el
 ;; pass.el (a major mode for pass): https://github.com/NicolasPetton/pass
-;; auth-password-store.el (integration of Emacs' auth-source with pass, included in Emacs 26+): https://github.com/DamienCassou/auth-password-store
+;; auth-source-pass.el (integration of Emacs' auth-source with pass, included in Emacs 26+): https://github.com/DamienCassou/auth-password-store
 
 ;; Usage:
 
@@ -44,14 +44,7 @@
 
 (require 'helm)
 (require 'password-store)
-(require 'auth-source-pass nil t)
-
-(declare-function auth-pass-get "auth-password-store")
-(unless (functionp #'auth-source-pass-get)
-  (require 'auth-password-store nil t)
-  ;; auth-source-pass got renamed but MELPA update is slow. For now,
-  ;; we'll just make an alias if we need it:
-  (defalias #'auth-source-pass-get #'auth-pass-get))
+(require 'auth-source-pass)
 
 (defgroup helm-pass nil
   "Emacs helm interface for helm-pass"
