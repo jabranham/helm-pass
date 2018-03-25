@@ -14,7 +14,7 @@
 
 (unless (package-installed-p 'helm)
   (package-install 'helm))
-(unless (package-installed-p 'helm)
+(unless (package-installed-p 'password-store)
   (package-install 'password-store))
 (unless (package-installed-p 'auth-password-store)
-  (package-install 'auth-password-store))
+  (package-install 'auth-source-pass))
