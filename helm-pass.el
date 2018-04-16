@@ -6,7 +6,7 @@
 ;; Maintainer: J. Alexander Branham <branham@utexas.edu>
 ;; URL: https://github.com/jabranham/helm-pass
 ;; Version: 0.2
-;; Package-Requires: ((helm "0") (password-store "0") (auth-source-pass "4.0.0"))
+;; Package-Requires: ((emacs "24.3") (helm "0") (password-store "0") (auth-source-pass "4.0.0"))
 
 ;; This file is not part of GNU Emacs.
 
