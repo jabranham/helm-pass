@@ -69,7 +69,7 @@ Does not clear it from clipboard."
   :group 'helm-pass
   :type '(alist :key-type string :value-type function))
 
-(defvar helm-source-pass
+(defvar helm-pass-source-pass
   (helm-build-sync-source "Password File"
     :candidates #'password-store-list
     :action helm-pass-actions))
@@ -78,7 +78,7 @@ Does not clear it from clipboard."
 (defun helm-pass ()
   "Helm interface for pass."
   (interactive)
-  (helm :sources 'helm-source-pass
+  (helm :sources 'helm-pass-source-pass
         :buffer "*helm-pass*"))
 
 (provide 'helm-pass)
